@@ -5,6 +5,9 @@
   import {  fetchGetBrand, fetchGetChannel,fetchStoreType , 
             fetchAccountGroup , fetchAccountName ,fetchSalesSummary
          } from '../services/reportapi/getdataApi';
+
+         
+import "../../src/assets/css/styleGlobal.css";
 </script>
 
 
@@ -410,11 +413,11 @@
           </div>
           <div class="card-body px-0 pt-0 pb-2">
             <div class="table-responsive p-3">
-              <table class="table align-items-center mb-0" v-if="SalesTargetsSummary.length > 0">
+              <table class="table styletable align-items-center mb-0" v-if="SalesTargetsSummary.length > 0">
                 <thead >
                   <tr class=" bg-light bd_spc ">
                     <th style="text-align: left !important;" class="text-uppercase text-secondary text-sm font-weight-bolder text-dark" >
-                    Productss
+                    Product
                     </th>
 
                     <th

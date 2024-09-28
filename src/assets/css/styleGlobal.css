@@ -58,11 +58,12 @@
 th, td {
   padding: 15px!important;
 }
-.table {
-  width: 100%;
-  border-collapse: separate; 
-  border-spacing: 0 7px; 
-  border: none;
+.table.styletable{
+  width: 100%!important;
+  border-collapse: separate!important; 
+  border-spacing: 0 7px!important; 
+  border: none!important;
+  border-bottom-width: 1px white!important;
 }
 
 th {
