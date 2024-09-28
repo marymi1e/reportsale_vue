@@ -1,4 +1,8 @@
 
+<style>
+
+
+</style>
 <script setup>
  // import AuthorsTable from "./components/AuthorsTable.vue";
   import { formatNumber } from 'chart.js/helpers';
@@ -107,13 +111,19 @@ import "../../src/assets/css/styleGlobal.css";
    
   <div class="py-4 container-fluid bg-white shadow-lg" v-if="SalesTargetsSummary" >
     <div class="row mb-3">
-      <div class="col-lg-6 col-md-6 col-6 text-left">
+      <div class="col-lg-4 col-md-6 col-6 text-left">
         <h6 class="text-dark font-weight-bolder align-middle" > Total Company : {{ SalesTargetsSummary[0].month_txt}} {{ SalesTargetsSummary[0].current_year }}</h6> 
       </div>  
       <div class="col-lg-4 text-left"> 
         <div class="">
           <button class="btn mb-0 bg-button-orange btn-md w-100 null "><i class="fa fa-exclamation-circle"></i> New Customer Group</button>
         </div>
+      </div>
+      <div class="col-lg-4 text-end  ">
+        <span class="text-date"> Ass Of <i class="fa fa-calendar" aria-hidden="true"></i> {{month_txt_current }} {{ day_now }}
+        </span>
+
+
       </div>
     </div>
     <div class="row">
@@ -413,7 +423,7 @@ import "../../src/assets/css/styleGlobal.css";
           </div>
           <div class="card-body px-0 pt-0 pb-2">
             <div class="table-responsive p-3">
-              <table class="table styletable align-items-center mb-0" v-if="SalesTargetsSummary.length > 0">
+              <table class="table align-items-center mb-0" v-if="SalesTargetsSummary.length > 0">
                 <thead >
                   <tr class=" bg-light bd_spc ">
                     <th style="text-align: left !important;" class="text-uppercase text-secondary text-sm font-weight-bolder text-dark" >
@@ -746,7 +756,7 @@ import "../../src/assets/css/styleGlobal.css";
                     <th
                       class="text-uppercase text-secondary text-sm font-weight-bolder text-dark"
                     >
-                    KeyAccountName
+                    Key Account Name
                     </th>
 
                     <th
@@ -890,7 +900,7 @@ import "../../src/assets/css/styleGlobal.css";
             <div class="table-responsive p-3">
               <table class="table align-items-center mb-0" v-if="SalesTargetsSummary.length > 0">
                 <thead >
-                  <tr>
+                  <tr class="bg-light">
                     <th style="text-align: left !important;"
                       class="text-uppercase text-secondary text-sm font-weight-bolder text-dark"
                     >
@@ -1050,6 +1060,7 @@ export default {
     return monthAbbreviations[monthNumber - 1];
   };
       const currentDate = new Date();
+      const daynow = currentDate.getDate();
       const currentYear = currentDate.getFullYear(); 
       const currentMonth = new Date(currentDate.setMonth(currentDate.getMonth())).getMonth() + 1; 
       const lastYear = currentYear-1;
@@ -1080,6 +1091,7 @@ export default {
       lastYear:lastYear,
       month_txt_current:monthAbbr,
       month_txt_last:monthAbbr_last,
+      day_now:daynow,
       isColumnVisible: false,
       isColumnVisibleDetail: false,
       isColumnVisibleCusName: false,
